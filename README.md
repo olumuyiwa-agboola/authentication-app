@@ -17,6 +17,7 @@ A complete authentication app with registration, login and access control built 
 
 ## Routes
 - ### index:
-    - 
+    - /
 - ### users: 
-    - 
+    - login
+    - register
