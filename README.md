@@ -14,3 +14,9 @@ A complete authentication app with registration, login and access control built 
 
 ## Dev Dependency
 - Nodemon
+
+## Routes
+- ### index:
+    - 
+- ### users: 
+    - 
