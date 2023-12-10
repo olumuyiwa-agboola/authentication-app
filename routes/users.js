@@ -10,4 +10,10 @@ router.get('/register', (req, res) => res.render('register'));
 // Dashboard
 router.get('/dashboard', (req, res) => res.render('dashboard'));
 
+// Register Handle
+router.post('/register', (req, res) => {
+    console.log(req.body)
+    res.send('hello');
+});
+
 module.exports = router;
