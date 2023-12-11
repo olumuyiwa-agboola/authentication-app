@@ -12,8 +12,36 @@ router.get('/dashboard', (req, res) => res.render('dashboard'));
 
 // Register Handle
 router.post('/register', (req, res) => {
-    console.log(req.body)
-    res.send('hello');
+    const { firstName, lastName, email, password, password2 } = req.body;
+    let errors = [];
+
+    // Check required fields
+    if(!firstName || !lastName || !email || !password || !password2) {
+        errors.push({ msg: 'Please fill in all fields' });
+    }
+
+    // Check passwords match
+    if(password !== password2) {
+        errors.push({ msg: 'Passwords do not match' });
+    }
+
+    // Check password length
+    if(password.length < 6) {
+        errors.push({ msg: 'Password should should be at least 6 characters' });
+    }
+
+    if(errors.length > 0) {
+        res.render('register', {
+            errors,
+            firstName,
+            lastName,
+            email,
+            password,
+            password2
+        });
+    } else {
+        res.send('Pass')
+    }
 });
 
 module.exports = router;
