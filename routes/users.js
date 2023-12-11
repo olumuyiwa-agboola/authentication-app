@@ -12,7 +12,7 @@ router.get('/dashboard', (req, res) => res.render('dashboard'));
 
 // Register Handle
 router.post('/register', (req, res) => {
-    const { firstName, lastName, email, password, password2 } = req.body;
+     const { firstName, lastName, email, password, password2 } = req.body;
     let errors = [];
 
     // Check required fields
@@ -27,7 +27,7 @@ router.post('/register', (req, res) => {
 
     // Check password length
     if(password.length < 6) {
-        errors.push({ msg: 'Password should should be at least 6 characters' });
+        errors.push({ msg: 'Password should be at least 6 characters' });
     }
 
     if(errors.length > 0) {
